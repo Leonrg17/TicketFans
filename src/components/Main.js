@@ -44,12 +44,12 @@ class Main extends Component {
               <th scope="col"></th>
             </tr>
           </thead>
-          <tbody id="productList">
+          <tbody id="ticketList">
           { this.props.tickets.map((ticket, key) => {
   return(
     <tr key={key}>
       <th scope="row">{ticket.id.toString()}</th>
-      <td>{ticket.name}</td>
+      <td>{ticket.artist}</td>
       <td>{window.web3.utils.fromWei(ticket.price.toString(), 'Ether')} Eth</td>
       <td>{ticket.owner}</td>
       <td>
