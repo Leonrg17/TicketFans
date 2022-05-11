@@ -48,8 +48,10 @@ tickets[ticketCount] = Ticket(ticketCount,_artist,_price, msg.sender,false );//c
 
 emit TicketCreated (ticketCount,_artist,_price, msg.sender,false);
 
-
 }
+
+
+
 
 function purchaseTicket(uint _id) public payable{
 
