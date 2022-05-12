@@ -43,9 +43,9 @@ module.exports = {
     // options below to some value.
     //
     development: {
-      host: "172.23.224.1",     // Localhost (default: none)
-      port: 8545,            // Standard Ethereum port (default: none)
-      network_id: "*",       // Any network (default: none)
+      host: "127.0.0.1",
+       port: 7545,
+       network_id: "*"      // Any network (default: none)
      },
 
      test:{
@@ -84,8 +84,8 @@ module.exports = {
   mocha: {
     // timeout: 100000
   },
-contracts_directory: '/mnt/c/Users/leon_/.VScodeWorkspace/CMPE183TicketFans/src/contracts',
-contracts_build_directory: '/mnt/c/Users/leon_/.VScodeWorkspace/CMPE183TicketFans/src/abis/',
+contracts_directory: 'C:/Users/OurFastestPC/Desktop/College/2_2022_Spring/183/CMPE183_Project/TicketFans/src/contracts',
+contracts_build_directory: 'C:/Users/OurFastestPC/Desktop/College/2_2022_Spring/183/CMPE183_Project/TicketFans/src/abis',
   // Configure your compilers
   compilers: {
     solc: {

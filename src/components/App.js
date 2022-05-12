@@ -38,7 +38,7 @@ class App extends Component {
       this.setState({ticketfan})
       const ticketCount = await ticketfan.methods.ticketCount().call()
       this.setState({ ticketCount })
-
+    
     // Load products
     for (var i = 1; i <= ticketCount; i++) {
       const tick = await ticketfan.methods.tickets(i).call()
@@ -47,8 +47,8 @@ class App extends Component {
       })
     }
 
-
-      this.setState({loading: false})
+    this.setState({loading: false})
+     
       
     } else {
       window.alert('TicketFan contract not deployed to detected network.')
