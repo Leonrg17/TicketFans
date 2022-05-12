@@ -1,0 +1,9 @@
+.ticketHeader{
+    background-color: rgba(226, 225, 225, 0.745);
+    color: orangered;
+    border-radius: 5px;
+    border: 5px solid;
+    border-color: rgba(4, 104, 253, 0.707);
+    padding-left: 1%;
+
+}
