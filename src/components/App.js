@@ -38,7 +38,7 @@ class App extends Component {
       this.setState({ticketfan})
       const ticketCount = await ticketfan.methods.ticketCount().call()
       this.setState({ ticketCount })
-    
+      
     // Load products
     for (var i = 1; i <= ticketCount; i++) {
       const tick = await ticketfan.methods.tickets(i).call()
@@ -46,9 +46,9 @@ class App extends Component {
         tickets: [...this.state.tickets, tick]
       })
     }
+this.setState({loading: false})
 
-    this.setState({loading: false})
-     
+      
       
     } else {
       window.alert('TicketFan contract not deployed to detected network.')
@@ -58,9 +58,9 @@ class App extends Component {
 
   }
 
-  createTicket(name, price) {
+  createTicket(name, price,SerialNum,Rw,Section) {
     this.setState({ loading: true })
-    this.state.ticketfan.methods.createTicket(name, price).send({ from: this.state.account })
+    this.state.ticketfan.methods.createTicket(name, price, SerialNum,Rw,Section).send({ from: this.state.account })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })

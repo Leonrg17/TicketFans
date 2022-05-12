@@ -10,6 +10,9 @@ contract TicketFan{
         uint id;
         string artist;
         uint price;
+        uint TicketNum;
+        uint SeatNum;
+        uint SectionNum;
         address payable owner;
         bool purchased;
     }
@@ -18,6 +21,9 @@ contract TicketFan{
 event TicketCreated(uint id,
         string artist,
         uint price,
+        uint TicketNum,
+        uint SeatNum,
+        uint SectionNum,
         address payable owner,
         bool purchased
         );
@@ -25,6 +31,9 @@ event TicketCreated(uint id,
 event TicketPurchased(uint id,
         string artist,
         uint price,
+        uint TicketNum,
+        uint SeatNum,
+        uint SectionNum,
         address payable owner,
         bool purchased
         );
@@ -35,22 +44,24 @@ name  = "TicketFans";
 
     }
 
-function createTicket(string memory _artist,uint _price) public{
+function createTicket(string memory _artist, uint _price, uint _TicketNum, uint _SeatNum, uint _SectionNum) public{
 
 require(bytes(_artist).length > 0);
 
 require(_price>0);
 
+require(_TicketNum > 0);
+require(_SeatNum > 0);
+require(_SectionNum > 0);
+
 
 ticketCount++;//intement ticket count
 
-tickets[ticketCount] = Ticket(ticketCount,_artist,_price, msg.sender,false );//create ticket
+tickets[ticketCount] = Ticket(ticketCount,_artist,_price,_TicketNum, _SeatNum,_SectionNum, msg.sender,false );//create ticket
 
-emit TicketCreated (ticketCount,_artist,_price, msg.sender,false);
+emit TicketCreated (ticketCount,_artist,_price,_TicketNum, _SeatNum,_SectionNum, msg.sender,false);
 
 }
-
-
 
 
 function purchaseTicket(uint _id) public payable{
@@ -75,7 +86,7 @@ tickets[_id] = _ticket;//update ticket
 
 address(_seller).transfer(msg.value);//[pay seller]
 
-emit TicketPurchased (ticketCount,_ticket.artist,_ticket.price, msg.sender,true);
+emit TicketPurchased (ticketCount,_ticket.artist,_ticket.price,_ticket.TicketNum,_ticket.SeatNum,_ticket.SectionNum, msg.sender,true);
 
 
 }
