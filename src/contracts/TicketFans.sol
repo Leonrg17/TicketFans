@@ -40,7 +40,7 @@ event TicketPurchased(uint id,
 
 
     constructor() public{
-name  = "TicketFans";
+    name  = "TicketFans";
 
     }
 
