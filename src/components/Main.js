@@ -9,8 +9,11 @@ class Main extends Component {
         <form onSubmit={(event) => {
           event.preventDefault()
           const name = this.artistName.value
+          const SerialNum = this.TicketNum.value
+          const Rw = this.SeatNum.value
+          const Section = this.SectionNum.value
           const price = window.web3.utils.toWei(this.ticketPrice.value.toString(), 'Ether')
-          this.props.createTicket(name, price)
+          this.props.createTicket(name, price,SerialNum,Rw,Section)
         }}>
           <div className="form-group mr-sm-2">
             <input
@@ -19,6 +22,33 @@ class Main extends Component {
               ref={(input) => { this.artistName = input }}
               className="form-control"
               placeholder="artist Name"
+              required />
+          </div>
+          <div className="form-group mr-sm-2">
+            <input
+              id="TicketNum"
+              type="text"
+              ref={(input) => { this.TicketNum = input }}
+              className="form-control"
+              placeholder="Ticket Number"
+              required />
+          </div>
+          <div className="form-group mr-sm-2">
+            <input
+              id="SeatNum"
+              type="text"
+              ref={(input) => { this.SeatNum = input }}
+              className="form-control"
+              placeholder="Seat Number"
+              required />
+          </div>
+          <div className="form-group mr-sm-2">
+            <input
+              id="SectionNum"
+              type="text"
+              ref={(input) => { this.SectionNum = input }}
+              className="form-control"
+              placeholder="Section Number"
               required />
           </div>
           <div className="form-group mr-sm-2">
@@ -39,6 +69,9 @@ class Main extends Component {
             <tr>
               <th scope="col">#</th>
               <th scope="col">Name</th>
+              <th scope="col">Ticket Number</th>
+              <th scope="col">Seat Number</th>
+              <th scope="col">Section Number</th>
               <th scope="col">Price</th>
               <th scope="col">Owner</th>
               <th scope="col"></th>
@@ -50,6 +83,9 @@ class Main extends Component {
     <tr key={key}>
       <th scope="row">{ticket.id.toString()}</th>
       <td>{ticket.artist}</td>
+      <td>{ticket.TicketNum.toString()}</td>
+      <td>{ticket.SeatNum.toString()}</td>
+      <td>{ticket.SectionNum.toString()}</td>
       <td>{window.web3.utils.fromWei(ticket.price.toString(), 'Ether')} Eth</td>
       <td>{ticket.owner}</td>
       <td>
