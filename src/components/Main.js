@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import './Main.css';
 
 class Main extends Component {
 
   render() {
     return (
-      <div id="content">
-        <h1>Add Ticket</h1>
+      <div class="ticketHeader" id="content">
+        <h1 >Add Ticket</h1>
         <form onSubmit={(event) => {
           event.preventDefault()
           const name = this.artistName.value
@@ -21,7 +22,7 @@ class Main extends Component {
               type="text"
               ref={(input) => { this.artistName = input }}
               className="form-control"
-              placeholder="artist Name"
+              placeholder="Artist Name"
               required />
           </div>
           <div className="form-group mr-sm-2">

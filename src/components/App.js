@@ -88,13 +88,16 @@ this.setState({loading: false})
 
   render() {
     return (
-      <div>
+      <div class = "background">
       <Navbar account={this.state.account} />
         <div className="container-fluid mt-5">
           <div className="row">
           <main role="main" className="col-lg-12 d-flex">
           { this.state.loading
-          ? <div id="loader" className="col-lg-12 d-flex text-center"> <img src={logo} className="App-logo" alt="logo" /> </div>
+          ? <div id="loader" className="col-lg-12 d-flex"> 
+          <img class = "centered" src={logo} className="App-logo" alt="logo" />
+          <div class = "loadbkg"> <p class = "load">Loading...</p> </div>
+          <img class = "centered" src={logo} className="App-logo" alt="logo" /></div>
           : <Main
           tickets={this.state.tickets}
           createTicket={this.createTicket}
