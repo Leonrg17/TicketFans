@@ -1,8 +1,8 @@
 # TicketFans
 
-Safe Tickets in the blockchain.
+Some directories must be changed in files such as "truffle-config.js"
 
-Use of this application requires Node.js, Ganache, Truffle, and MetaMask.
+Use of this application requires Node.js, Solidity , Ganache, Truffle, and MetaMask.
 
 To run the program head to the directory where it was installed on your terminal and type "npm run start".
 
@@ -21,3 +21,6 @@ Then by hitting save you must finalize your transaction then after the page shou
 Similarly, to purchase you may hit the buy button to purchase a ticket if it has been pruchased or is being purchased by the seller it wil not be sold.
 
 If it has not been sold you must finalize your transaction using MetaMask. Once the webpage is reloaded we will see the buy button is gone.
+
+
+*Note to test the script the command "truffle test" must be run*
