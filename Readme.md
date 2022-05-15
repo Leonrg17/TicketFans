@@ -1,5 +1,7 @@
 # TicketFans
 
+Safe Tickets in the blockchain.
+
 Use of this application requires Node.js, Ganache, Truffle, and MetaMask.
 
 To run the program head to the directory where it was installed on your terminal and type "npm run start".
